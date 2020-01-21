@@ -1,15 +1,87 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Getmetobeer</title>
+    <title>GetMetoBeer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="pagecol col-11">
+      <nav class="nav col-12">
+        <p><%= link_to image_tag("beerlogo.png") + 'GetMetoBeer.com', root_path %></p>
+        <ul class="search col-6">
+          <li class="col-12">
+            <%= form_tag(search_page_path, :method => "get", class: 'col-12') do %>
+              <%= search_field_tag :search, params[:search], placeholder: "Search for breweries and beer..." %>
+            <% end %>
+          </li>
+        </ul>
+        <ul class="login">
+          <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'My Profile', user_path(current_user), class: 'nav-link'%>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Sign out!', destroy_user_session_path, method: :delete, class: 'nav-link'%>
+              </li>
+            <% else %>
+              <li class="nav-item sign-in">
+                <%= link_to 'Log in', new_user_session_path, class: 'nav-link'%>
+              </li>
+              <li class="vl">
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+              </li>
+            <% end %>
+        </ul>
+      </nav>
+      <%= yield %>
+      <div class="footer">
+        <div class="footer-div">
+          <%= image_tag("beerlogofooter.png") %><span id="footer-website">GetMetoBeer.com</span>
+          <div class="footer-icons">
+            <span class="fa fa-facebook-square fa-2x social-button"></span>
+            <span class="fa fa-twitter-square fa-2x social-button"></span>
+            <%= link_to 'https://github.com/kellarelliott' do %>
+              <span class="fa fa-github-square fa-2x social-button"></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="about">
+          <div>
+            About
+          </div>
+          <br />
+            <%= link_to 'Team', '#'%>
+          <br />
+            <%= link_to 'Careers', '#' %>
+          <br />
+            <%= link_to 'Privacy Policy','#' %>
+        </div>
+        <div class= "dev-contacts">
+          <div>
+            Kellar Elliott
+          </div>
+          <br />
+            Kellarelliott@gmail.com
+          <br />
+            555-555-5555
+          <br />
+            Denver, Colorado
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+

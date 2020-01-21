@@ -1,0 +1,41 @@
+<script>
+$(function(){
+
+  function clicked(thing, thing_none) {
+    $('.' + thing).css('display', 'block');
+    $('.' + thing_none).css('display', 'none');
+  };
+  $('.brew_button').click(function () {clicked('brewery_results_list', 'beer_results')});
+  $('.beer_button').click(function () {clicked('beer_results', 'brewery_results_list')});
+});
+</script>
+
+
+
+<div  class="search_results col-7 col-s-12" style="clear:both">
+  <div class=search_tabs>
+    <button class="brew_button">Breweries</button>
+    <button class="beer_button">Beers</button>
+  </div>
+  <br />
+  <div class="brewery_results_list">
+    <% @results_brewery.each do |brewery| %>
+      <div class="brewery_result">
+        <div class="brewery_result_row col-8">
+          <%= image_tag "#{brewery['brewery']['images']['icon']}", :style => "margin-right: 4px" %>
+          <div>
+            <%= link_to  brewery["name"], brewery_path("#{brewery['brewery']['id']}_#{brewery['id']}"), :style => "color:black" %> <br />
+            <%= brewery["streetAddress"] %><br />
+            <%= brewery['locality'] %>, <%= brewery['region'] %>, <%= brewery['postalCode'] %>
+          </div>
+        </div>
+        <div class="search_rating">
+          3.6
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div style="display:none" class="beer_results">
+    Beers
+  </div>
+</div>
