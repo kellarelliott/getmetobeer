@@ -24,7 +24,7 @@
             <th class="ch col-3">Name</th>
             <th class="ch col-2">Style</th>
             <th class="ch col-1">Abv</th>
-            <th class="ch col-5">Description</th>
+            <th class="ch col-5 beer_description">Description</th>
           </tr>
           <% @beers['data'].each do |beer| %>
             <tr class= 'brewery_beer_table_tr'>
@@ -34,22 +34,22 @@
               <% @beer_ids['data'].each do |beer_id|%>
                 <% if beer_id['id'] == beer['id']%>
                   <% if beer_id['description'] %>
-                    <td><%= beer_id['description'] %></td>
+                    <td class="beer_description"><%= beer_id['description'] %></td>
                     <% break %>
                   <% else %>
-                    <td>No Description</td>
+                    <td class="beer_description">No Description Available</td>
                     <% break%>
                   <% end %>
                 <% end %>
                 <% if beer_id['id'] == @beer_ids['data'].last['id'] && (beer_id['id'] != beer['id']) %>
-                  <td>No Description Available</td>
+                  <td class="beer_description">No Description Available</td>
                 <% end %>
               <% end %>
             </tr>
           <% end %>
         </table>
       </div>
-    <div class="google-contact col-s-12">
+    <div class="google-contact">
       <h2>Brewery Information</h2>
        <% @breweries['data'].each do |brewery| %>
         <% if params[:id].split('_').last.delete(' ') == brewery['id'].delete(' ') %>

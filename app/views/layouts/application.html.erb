@@ -15,6 +15,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
+  <script>
+
+  $(function () {
+    $('#search').val('')
+    $('#hidden_search').val('')
+  })
+
+  </script>
+
   <body>
     <div class="pagecol col-11 col-s-12">
       <nav class="nav col-12">
@@ -46,7 +55,7 @@
       </nav>
       <div class="hidden_search col-s-9">
         <%= form_tag(search_page_path, :method => "get", class: 'col-12 navicon') do %>
-          <%= search_field_tag :search, params[:search], placeholder: "Search for a brewery.." %>
+          <%= search_field_tag :hidden_search, params[:hidden_search], placeholder: "Search for a brewery.." %>
         <% end %>
       </div>
       <%= yield %>

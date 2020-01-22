@@ -1,4 +1,4 @@
-<div  class="search_results col-6 col-s-12" style="clear:both">
+<div  class="search_results col-6" style="clear:both">
   <div class=search_tabs>
     <h2>Breweries</h2>
   </div>
@@ -6,15 +6,15 @@
   <div class="brewery_results_list">
     <% @results_brewery.each do |brewery| %>
       <div class="brewery_result">
-        <div class="brewery_result_row col-8">
-          <%= image_tag "#{brewery['brewery']['images']['icon']}", :style => "margin-right: 4px" %>
+        <div class="brewery_result_row col-8 col-s-10">
+          <%= image_tag "#{brewery['brewery']['images']['icon']}", :class => "search_icon" %>
           <div>
             <%= link_to  brewery["name"], brewery_path("#{brewery['brewery']['id']}_#{brewery['id']}"), :style => "color:black" %> <br />
             <%= brewery["streetAddress"] %><br />
-            <%= brewery['locality'] %>, <%= brewery['region'] %>, <%= brewery['postalCode'] %>
+            <%= brewery['locality'] %>, <%= brewery['region'] %>
           </div>
         </div>
-        <div class="search_rating">
+        <div class="search_rating col-2 col-s-2">
           3.6
         </div>
       </div>

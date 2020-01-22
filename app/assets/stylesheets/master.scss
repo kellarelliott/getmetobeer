@@ -211,6 +211,20 @@ tr:nth-child(even) {
   min-height: 200px;
 }
 
+.brewery_result_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.brewery_result {
+  display: flex;
+  flex-direction: row;
+}
+
+.search_icon {
+  margin-right: 4px;
+}
+
 @media only screen and (max-width: 600px) {
   /* For tablets: */
   .col-s-1 {width: 8.33%;}
@@ -242,9 +256,10 @@ tr:nth-child(even) {
     margin-bottom: 12px;
   }
 
-  #search {
+  #hidden_search {
     width: 100%;
     text-align: center;
+    font: inherit;
   }
 
   .hidden_search {
@@ -305,9 +320,21 @@ tr:nth-child(even) {
   #map {
     height: 200px;
     border-radius: 10px;
+    width: 95%;
   }
 
+  .google-contact {
+    padding-right: 0px;
+  }
 
+  .beer_description {
+    display: none;
+  }
+
+  .search_icon {
+    width: 55px;
+    height: 55px;
+  }
 
 }
 
@@ -332,6 +359,7 @@ tr:nth-child(even) {
   display: none;
   margin-bottom: 5px;
 }
+
 
 .footer {
   display: flex;
@@ -483,16 +511,6 @@ span.fa{
 
   .search_tabs {
     padding-top: 7px;
-  }
-
-  .brewery_result {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .brewery_result_row {
-    display: flex;
-    flex-direction: row;
   }
 
   .profile_container {
