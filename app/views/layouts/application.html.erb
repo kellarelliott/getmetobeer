@@ -16,13 +16,13 @@
   </head>
 
   <body>
-    <div class="pagecol col-11">
+    <div class="pagecol col-11 col-s-12">
       <nav class="nav col-12">
         <p><%= link_to image_tag("beerlogo.png") + 'GetMetoBeer.com', root_path %></p>
-        <ul class="search col-6">
-          <li class="col-12">
-            <%= form_tag(search_page_path, :method => "get", class: 'col-12') do %>
-              <%= search_field_tag :search, params[:search], placeholder: "Search for breweries and beer..." %>
+        <ul class="search col-6 col-s-7">
+          <li class="col-12 col-s-12">
+            <%= form_tag(search_page_path, :method => "get", class: 'col-12 navicon') do %>
+              <%= search_field_tag :search, params[:search], placeholder: "Search for a brewery.." %>
             <% end %>
           </li>
         </ul>
@@ -35,10 +35,8 @@
                 <%= link_to 'Sign out!', destroy_user_session_path, method: :delete, class: 'nav-link'%>
               </li>
             <% else %>
-              <li class="nav-item sign-in">
+              <li class="nav-item ">
                 <%= link_to 'Log in', new_user_session_path, class: 'nav-link'%>
-              </li>
-              <li class="vl">
               </li>
               <li class="nav-item">
                 <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
@@ -46,10 +44,15 @@
             <% end %>
         </ul>
       </nav>
+      <div class="hidden_search col-s-9">
+        <%= form_tag(search_page_path, :method => "get", class: 'col-12 navicon') do %>
+          <%= search_field_tag :search, params[:search], placeholder: "Search for a brewery.." %>
+        <% end %>
+      </div>
       <%= yield %>
-      <div class="footer">
-        <div class="footer-div">
-          <%= image_tag("beerlogofooter.png") %><span id="footer-website">GetMetoBeer.com</span>
+      <div class="footer" style="clear:both">
+        <div class="footer-website-div">
+          <%= image_tag("beerlogofooter.png", class: "footer-logo") %><span id="footer-website">GetMetoBeer.com</span>
           <div class="footer-icons">
             <span class="fa fa-facebook-square fa-2x social-button"></span>
             <span class="fa fa-twitter-square fa-2x social-button"></span>

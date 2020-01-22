@@ -1,21 +1,6 @@
-<script>
-$(function(){
-
-  function clicked(thing, thing_none) {
-    $('.' + thing).css('display', 'block');
-    $('.' + thing_none).css('display', 'none');
-  };
-  $('.brew_button').click(function () {clicked('brewery_results_list', 'beer_results')});
-  $('.beer_button').click(function () {clicked('beer_results', 'brewery_results_list')});
-});
-</script>
-
-
-
-<div  class="search_results col-7 col-s-12" style="clear:both">
+<div  class="search_results col-6 col-s-12" style="clear:both">
   <div class=search_tabs>
-    <button class="brew_button">Breweries</button>
-    <button class="beer_button">Beers</button>
+    <h2>Breweries</h2>
   </div>
   <br />
   <div class="brewery_results_list">
@@ -33,9 +18,7 @@ $(function(){
           3.6
         </div>
       </div>
+      <br />
     <% end %>
-  </div>
-  <div style="display:none" class="beer_results">
-    Beers
   </div>
 </div>

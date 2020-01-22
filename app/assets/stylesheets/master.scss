@@ -75,7 +75,7 @@ nav ul li a {
   text-decoration: none;
 }
 
-.sign-in {
+.nav-item {
   padding-right: 10px;
 }
 
@@ -139,19 +139,6 @@ caption {
   border-radius: 15px;
   background-color: #303030;
   color: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-
-.footer-div {
-  padding-left: 15px;
-  width: 65%;
-}
-
-.about {
-  width: 15%;
 }
 
 #footer-website {
@@ -162,11 +149,7 @@ caption {
   padding-left: 6px;
 }
 
-.dev-contacts {
-  width: 20%;
-  word-break: break-all;
 
-}
 
 .contact-social {
   display: flex;
@@ -200,16 +183,32 @@ caption {
   margin-top: 10px;
 }
 
-.beer_button {
-  border-radius: 5px;
-  font: inherit;
-  cursor: pointer;
+.search_rating {
+  padding: 15px 0;
 }
+
 
 .brew_button {
   border-radius: 5px;
   font: inherit;
   cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f3ed;
+}
+
+.devise-container {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.devise-box {
+  margin: auto;
+  padding: 1px 0px 15px 20px;;
+  background-color: white;
+  border-radius: 15px;
+  min-height: 200px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -227,15 +226,62 @@ caption {
   .col-s-11 {width: 91.66%;}
   .col-s-12 {width: 100%;}
 
-  .container{
-    height: 5%;
+  nav {
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  ul.search {
+    display: none;
+  }
+
+  ul.login {
+    margin-top: 15px;
+    margin-bottom: 12px;
+  }
+
+  #search {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hidden_search {
+    border-radius: 10px;
+    margin: 5px auto;
+    background-color: white;
+  }
+
+  .footer {
+    padding: 5px;
+  }
+
+  .footer-logo {
+    height: 25px;
+    width: 25px;
+  }
+
+  #footer-website {
+    font-size: 20px;
+  }
+
+  .about {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .dev-contacts {
+    margin: 0 auto;
+    text-align: center;
   }
 
   .brew_logo {
   width: 25%;
   height: 25%;
   border-radius: 100%;
-}
+  }
 
   h1 {
     font-size: 15px;
@@ -280,18 +326,34 @@ caption {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 
-.devise-container {
-  margin-bottom: 15px;
-  margin-top: 10px;
+
+
+.hidden_search {
+  display: none;
+  margin-bottom: 5px;
 }
 
-.devise-box {
-  margin: auto;
-  padding: 1px 0px 15px 20px;;
-  background-color: white;
-  border-radius: 15px;
-  min-height: 200px;
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
+.footer-website-div {
+  padding-left: 15px;
+  width: 65%;
+}
+
+.dev-contacts {
+  width: 20%;
+  word-break: break-all;
+}
+
+.about {
+  width: 15%;
+}
+
+
   .main-stuff {
   display: flex;
   flex-direction: row;
@@ -335,6 +397,10 @@ table.beer-table-header {
   margin-top: 0px;
 }
 
+.brewery_beer_table_tr {
+  font-size: 15px;
+}
+
 th {
   text-align: left;
   padding-top: 10px;
@@ -362,10 +428,10 @@ td {
   text-align: left;
 }
 
-.days-hours {
-  padding-top: 15px;
-}
-
+.hours_table
+ {
+   border-collapse: collapse;
+ }
 span.fa{
   padding-bottom: 10px;
 }
@@ -429,6 +495,28 @@ span.fa{
     flex-direction: row;
   }
 
+  .profile_container {
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 13px;
+  }
+
+  .profile_info {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0 0 15px;
+  }
+
+  .username {
+    padding: 45px 10px;
+  }
+
+  .user_reviews_table {
+    max-height: 300px;
+    overflow: scroll;
+  }
 }
 
 
