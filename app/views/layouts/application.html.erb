@@ -18,9 +18,21 @@
   <script>
 
   $(function () {
-    $('#search').val('')
-    $('#hidden_search').val('')
-  })
+    $('#search').val('');
+    $('#hidden_search').val('');
+
+    var hidden = 'yes'
+    $('.magnify_glass').click(function () {
+      if (hidden === 'yes') {
+        $('.hidden_search_div').css("display", "block");
+        hidden = 'no'
+      } else {
+        $('.hidden_search_div').css("display", "none");
+        hidden = 'yes'
+      }
+    });
+
+  });
 
   </script>
 
@@ -34,6 +46,9 @@
               <%= search_field_tag :search, params[:search], placeholder: "Search for a brewery.." %>
             <% end %>
           </li>
+        </ul>
+        <ul class="magnify_glass">
+          <li><i class="fa fa-search" aria-hidden="true"></i></li>
         </ul>
         <ul class="login">
           <% if user_signed_in? %>
@@ -53,7 +68,7 @@
             <% end %>
         </ul>
       </nav>
-      <div class="hidden_search col-s-9">
+      <div class="hidden_search_div col-s-9">
         <%= form_tag(search_page_path, :method => "get", class: 'col-12 navicon') do %>
           <%= search_field_tag :hidden_search, params[:hidden_search], placeholder: "Search for a brewery.." %>
         <% end %>
