@@ -5,13 +5,17 @@
       $('#read').css('display', 'none');
     };
 
+    var height = $('.beer-table-div').height();
+
     $('#read').click(function (){
+
+
        if($('#read').text() === "Read More...") {
-        $('.beer-table-div').css("height", "auto");
+        $('.beer-table-div').css("max-height", "100%");
         $('#read').text("Read Less...");
       }
       else {
-        $('.beer-table-div').css("height", "300px");
+        $('.beer-table-div').css("max-height", `${height}px`);
         $('.beer-table-div').css("overflow", "hidden");
         $('#read').text("Read More...");
       };

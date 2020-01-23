@@ -366,6 +366,12 @@ tr:nth-child(even) {
     padding: 10px;
   }
 
+  .beer-table-div {
+  max-height: 300px;
+  margin-top: 0px;
+  overflow: hidden;
+}
+
   #map {
     height: 200px;
     border-radius: 10px;
@@ -476,7 +482,7 @@ table.beer-table-header {
 }
 
 .beer-table-div {
-  height: 300px;
+  max-height: 450px;
   margin-top: 0px;
   overflow: hidden;
 }
