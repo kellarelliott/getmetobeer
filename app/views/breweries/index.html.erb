@@ -48,9 +48,6 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2EurYLoXt3BYUbbLyGqcCVdhQPwjWwYg&callback=initMap"></script>
     <% end %>
 
-
-    <div id="map-search">
-    </div>
     <div class="map-search-list">
       <div class="brewery-map-search-container">
         <%= form_tag(root_path, :method => "get", class: 'index_search col-12') do %>
@@ -70,8 +67,11 @@
         <% end %>
       </div>
     </div>
+    <div id="map-search">
+    </div>
+
   </div>
-  <div class="map-hops">
+  <div class="map-bottom">
   </div>
 </div>
 

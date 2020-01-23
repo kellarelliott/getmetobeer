@@ -43,16 +43,6 @@ nav ul.search {
   font: inherit;
 }
 
-
-#near_search {
-  width: 40%;
-}
-
-input#near_search::placeholder {
-  font-family: 'Montserrat', sans-serif;
-  height: 50px;
-}
-
 nav ul.login {
   float: right;
   padding-right: 4px;
@@ -292,6 +282,45 @@ tr:nth-child(even) {
     text-align: center;
   }
 
+  .brewery-map-search-container {
+    height: 30px;
+  }
+
+  #map-search {
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .index-search {
+    background-color: white;
+  }
+
+    .map-cheer {
+    background-image: image_url('beerflight.jpg');
+    height: 50px;
+    background-size: cover;
+    background-position: center center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 10px;
+  }
+
+  .map-bottom {
+    background-color: #303030;
+    height: 30px;
+    background-size: cover;
+    background-position: center center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 15px;
+  }
+
+  .brewery-map-search-container {
+    background-color: #303030;
+    text-align: center;
+    height: 30px;
+  }
+
   .brew_logo {
   width: 25%;
   height: 25%;
@@ -379,6 +408,12 @@ tr:nth-child(even) {
 
 .about {
   width: 15%;
+}
+
+#near_search {
+  width: 40%;
+  height: 50px;
+  font: inherit;
 }
 
 
@@ -495,7 +530,7 @@ span.fa{
     border-top-right-radius: 15px;
   }
 
-  .map-hops {
+  .map-bottom {
     background-color: #303030;
     height: 60px;
     background-size: cover;
@@ -506,6 +541,7 @@ span.fa{
 
   .map-search-container {
     display: flex;
+    flex-direction: row;
     background-color: white;
   }
 

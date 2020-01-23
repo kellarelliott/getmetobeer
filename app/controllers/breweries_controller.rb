@@ -32,6 +32,12 @@ class BreweriesController < ApplicationController
       #@results_beer = Beer.all.where("lower(beer_name) LIKE :search", search: "%#{@parameter}%")
     end
 
+    if params[:hidden_search]
+      @parameter = params[:hidden_search].downcase
+      @results_brewery = locations.find_all{ |location| location['brewery']['name'].downcase.include? "#{@parameter}"}
+      #@results_beer = Beer.all.where("lower(beer_name) LIKE :search", search: "%#{@parameter}%")
+    end
+
 
   end
 
