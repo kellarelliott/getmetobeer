@@ -281,7 +281,7 @@ tr:nth-child(even) {
 
   .hidden_search_div {
     border-radius: 10px;
-    margin: 5px auto;
+    margin: 7px auto;
     background-color: white;
     display: none;
   }
@@ -315,7 +315,7 @@ tr:nth-child(even) {
   }
 
   #map-search {
-    height: 150px;
+    height: 300px;
     border-radius: 10px;
   }
 
@@ -323,9 +323,9 @@ tr:nth-child(even) {
     background-color: white;
   }
 
-    .map-cheer {
+  .map-cheer {
     background-image: image_url('beerflight.jpg');
-    height: 50px;
+    height: 70px;
     background-size: cover;
     background-position: center center;
     border-top-left-radius: 15px;
@@ -335,7 +335,7 @@ tr:nth-child(even) {
 
   .map-bottom {
     background-color: #303030;
-    height: 30px;
+    height: 50px;
     background-size: cover;
     background-position: center center;
     border-bottom-left-radius: 15px;
