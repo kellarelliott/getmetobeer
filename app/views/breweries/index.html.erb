@@ -1,13 +1,9 @@
-
-
 <div class="index-map" style="clear:both">
   <div class="map-cheer">
   </div>
   <div class="map-search-container">
     <% if @near_search_results %>
     <script>
-
-
       function initMap() {
 
           var myLatLng = {lat: <%= @near_search_results.first['latitude'] %>, lng: <%= @near_search_results.first['longitude'] %>};
@@ -25,11 +21,11 @@
 
           $('#near_search').val('');
         };
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2EurYLoXt3BYUbbLyGqcCVdhQPwjWwYg&callback=initMap"></script>
 
+        window.google = {};
+    </script>
     <% else %>
-        <script>
+    <script>
       function initMap() {
           var myLatLng = {lat: 39.7430747, lng: -105.0201698 };
 
@@ -44,10 +40,11 @@
               itle: 'Hello World!'
               });
         };
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2EurYLoXt3BYUbbLyGqcCVdhQPwjWwYg&callback=initMap"></script>
-    <% end %>
 
+        window.google = {};
+    </script>
+    <% end %>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2EurYLoXt3BYUbbLyGqcCVdhQPwjWwYg&callback=initMap"></script>
     <div class="map-search-list">
       <div class="brewery-map-search-container">
         <%= form_tag(root_path, :method => "get", class: 'index_search col-12') do %>

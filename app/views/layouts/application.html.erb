@@ -8,33 +8,29 @@
     <style>
       @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
     </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
-  <script>
-
-  $(function () {
-    $('#search').val('');
-    $('#hidden_search').val('');
-
-    var hidden = 'yes'
-    $('.magnify_glass').click(function () {
-      if (hidden === 'yes') {
-        $('.hidden_search_div').css("display", "block");
-        hidden = 'no'
-      } else {
-        $('.hidden_search_div').css("display", "none");
-        hidden = 'yes'
-      }
-    });
-
-  });
-  </script>
   <body>
+    <script>
+    $(function () {
+      $('#search').val('');
+      $('#hidden_search').val('');
+
+      var hidden = 'yes'
+      $('.magnify_glass').click(function () {
+        if (hidden === 'yes') {
+          $('.hidden_search_div').css("display", "block");
+          hidden = 'no'
+        } else {
+          $('.hidden_search_div').css("display", "none");
+          hidden = 'yes'
+        }
+      });
+    });
+    </script>
     <div class="pagecol col-11 col-s-12">
       <nav class="nav col-12">
         <p><%= link_to image_tag("beerlogo.png") + 'GetMetoBeer.com', root_path %></p>
