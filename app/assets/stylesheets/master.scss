@@ -261,7 +261,7 @@ tr:nth-child(even) {
   }
 
   ul.magnify_glass {
-    margin-top: 14px;
+    margin-top: 9px;
   }
 
   ul.search {
@@ -312,8 +312,6 @@ tr:nth-child(even) {
 
   #map-search {
     height: 300px;
-    -webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;
-
   }
 
   .index-search {
@@ -417,7 +415,7 @@ tr:nth-child(even) {
 ul.magnify_glass {
   display: none;
 }
-.hidden_search {
+.hidden_search_div {
   display: none;
   margin-bottom: 5px;
 }
