@@ -1,29 +1,3 @@
-<script>
-  $(function () {
-
-    if($('.beer-table-div').height() < 300) {
-      $('#read').css('display', 'none');
-    };
-
-    var height = $('.beer-table-div').height();
-
-    $('#read').click(function (){
-
-
-       if($('#read').text() === "Read More...") {
-        $('.beer-table-div').css("max-height", "100%");
-        $('#read').text("Read Less...");
-      }
-      else {
-        $('.beer-table-div').css("max-height", `${height}px`);
-        $('.beer-table-div').css("overflow", "hidden");
-        $('#read').text("Read More...");
-      };
-    });
-
-  })
-</script>
-
 <div class="container col-12">
   <div class="brewery-header">
     <div class="name-box">
@@ -163,28 +137,13 @@
   <div class="reviews-column col-5 col-s-12">
     <div class="reviews-div">
       <h2>Reviews</h2>
+      <input id='comment-message' placeholder="Message">
+      <input id='comment-rating' placeholder="Rating">
+      <button id='submit-comment'>submit</button>
       <hr />
       <div class="review">
-        <p>This place was awersome. They had an IPA that was to die for. If you ever go hear get the SUPER MEGA DEATH STATE..</p>
-      </div>
-            <div class="review">
-        <p>This place was awersome. alk;sjdflaslkdfjklasjdfljak.</p>
-      </div>
-            <div class="review">
-        <p>This place was awersome. alk;sjdflaslkdfjklasjdflj</p>
-      </div>
-            <div class="review">
-        <p>This place was awersome. alk;sjdflaslkdfjklasjd.</p>
-      </div>
-            <div class="review">
-        <p>This place was awersome. alk;sjdfla.</p>
-      </div>
-            <div class="review">
-        <p>This place was awersome. alk;sjdflaslkdfjkla.</p>
-      </div>
-            <div class="review">
-        <p>This place was awersome. alk;sjdflaslkdfjk.</p>
       </div>
     </div>
   </div>
 </div>
+

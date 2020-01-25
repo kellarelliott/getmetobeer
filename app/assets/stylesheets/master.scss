@@ -1,7 +1,6 @@
 @import "font-awesome";
 
 
-
 body {
   background-color: #dbdbdb;
   font-family: 'Montserrat', sans-serif;
@@ -103,6 +102,8 @@ h1 {
   background-color: white;
   margin-top: 10px;
   padding: 10px;
+  -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+  box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
 }
 
 .read_more_div {
@@ -124,6 +125,8 @@ h1 {
   background-color: white;
   margin-bottom: 10px;
   padding: 10px;
+  -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+  box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
 }
 
 .reviews-div {
@@ -131,6 +134,8 @@ h1 {
   background-color: white;
   margin-bottom: 10px;
   padding: 10px;
+  -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+  box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
 }
 
 caption {
@@ -234,8 +239,15 @@ tr:nth-child(even) {
   display: flex;
   justify-content: center;
 }
+hr.review-split {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
 
-@media only screen and (max-width: 600px) {
+
+
+@media only screen and (max-width: 799px) {
   /* For tablets: */
   .col-s-1 {width: 8.33%;}
   .col-s-2 {width: 16.66%;}
@@ -326,6 +338,8 @@ tr:nth-child(even) {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     margin-top: 10px;
+    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+    box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
   }
 
   .map-bottom {
@@ -336,12 +350,16 @@ tr:nth-child(even) {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-bottom: 15px;
+    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+    box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
   }
 
   .brewery-map-search-container {
     background-color: #303030;
     text-align: center;
     height: 50px;
+    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+    box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
   }
 
   .brew_logo {
@@ -394,9 +412,14 @@ tr:nth-child(even) {
     height: 55px;
   }
 
+  .reviews-column {
+    max-height: 400px;
+    overflow: hidden
+  }
+
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   /* For desktop: */
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
@@ -466,6 +489,7 @@ ul.magnify_glass {
   padding-top: 15px;
   padding-left: 10px;
   text-align: center;
+  max-height: 900px;
 }
 
 .brew_logo {
@@ -560,6 +584,8 @@ span.fa{
     background-position: center center;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+  box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
   }
 
   .map-bottom {
@@ -569,12 +595,16 @@ span.fa{
     background-position: center center;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+  box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
   }
 
   .map-search-container {
     display: flex;
     flex-direction: row;
     background-color: white;
+    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
+    box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.22);
   }
 
   .search_tabs {

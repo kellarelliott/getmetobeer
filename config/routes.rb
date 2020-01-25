@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'breweries#index'
 
   get '/search' => 'breweries#search', :as => 'search_page'
+  resources :comments
   resources :breweries, only: [:index, :show]
   resources :users, only: :show
 end
