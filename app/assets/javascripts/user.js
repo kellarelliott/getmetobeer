@@ -4,12 +4,7 @@ $(function () {
   var userId = queryStringArray[queryStringArray.length - 1];
 
   $.get("/comments").success(function (data) {
-    commentString = `<tr>
-      <th class="col-2">Location</th>
-      <th class="col-1">Rating</th>
-      <th class="col-5">Review</th>
-      <th class="col-5">Date</th>
-    </tr>`;
+    commentString = "<tr><th class='col-2'>Location</th><th class='col-1'>Rating</th><th class='col-5'>Review</th><th class='col-5'>Date</th></tr>";
 
     $.each(data, function (index, review) {
       if (userId === review['user_id'].toString()) {
