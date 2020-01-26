@@ -649,6 +649,30 @@ hr.review-split {
     overflow: hidden;
   }
 
+  .crop {
+    border-radius: 100%;
+    height: 80px;
+    width: 80px;
+  }
+    .profile_info {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0 0 15px;
+  }
+
+  .username {
+    margin: auto;
+  }
+
+
+  .profile_container {
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 13px;
+  }
+
 }
 
 @media only screen and (min-width: 800px) {
@@ -666,7 +690,11 @@ hr.review-split {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 
-
+  .crop {
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+  }
 ul.magnify_glass {
   display: none;
 }

@@ -1,9 +1,7 @@
-<div class="profile_container col-9" style="clear:both">
+<div class="profile_container col-9 col-s-12" style="clear:both">
   <div class="profile_info">
     <div class="profile_pic">
-      <img src="https://images.unsplash.com/profile-fb-1527368999-01bec71421e9.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128" style="border-radius:100%">
-      <i class="fa fa-plus" aria-hidden="true"></i>
-      <i class="fa fa-pencil" aria-hidden="true"></i>
+        <%= image_tag "#{@user.picture}", class: 'crop'%>
     </div>
     <div class="username">
       <%= @user.email %> <br />

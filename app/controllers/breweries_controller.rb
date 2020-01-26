@@ -7,7 +7,15 @@ class BreweriesController < ApplicationController
       response = HTTParty.get('https://sandbox-api.brewerydb.com/v2/locations/?key=409ef177366ff1a3e706e1ce3d0032fb')
       locations = response["data"]
       @near_search_results = locations.find_all { |location| location['locality'].downcase == "#{@near_search_parameters}"}
+
+      @location_coordinates = []
+      @near_search_results.each do |location|
+        @location_coordinates.append([location['latitude'], location['longitude']])
+      end
     end
+
+
+
 
   end
 

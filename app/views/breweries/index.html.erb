@@ -2,23 +2,31 @@
   <div class="map-cheer">
   </div>
   <div class="map-search-container">
+
+
     <% if @near_search_results.present? %>
+
+
     <script>
       function initMap() {
+
+        coordinates = <%= @location_coordinates %>;
 
           var myLatLng = {lat: <%= @near_search_results.first['latitude'] %>, lng: <%= @near_search_results.first['longitude'] %>};
 
           var map = new google.maps.Map(document.getElementById('map-search'), {
-            zoom: 18,
+            zoom: 12,
             center: myLatLng
             });
 
-            var marker = new google.maps.Marker({
-              position: myLatLng,
-              map: map,
-              itle: 'Hello World!'
+          var marker, count;
+          for (count = 0; count < coordinates.length; count++) {
+              marker = new google.maps.Marker({
+                position: new google.maps.LatLng(coordinates[count][0], coordinates[count][1]),
+                map: map,
+                title: 'Hello World'
               });
-
+          }
           $('#near_search').val('');
         };
 
