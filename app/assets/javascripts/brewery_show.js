@@ -17,7 +17,7 @@ $(function () {
       $('#read').text("Read Less...");
     }
     else {
-      $('.beer-table-div').css("max-height", `${height}px`);
+      $('.beer-table-div').css("max-height", height + 'px');
       $('.beer-table-div').css("overflow", "hidden");
       $('#read').text("Read More...");
     };
