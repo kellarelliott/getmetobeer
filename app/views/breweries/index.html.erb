@@ -62,7 +62,7 @@
       <div class="brewery_search_results">
         <% if @near_search_results%>
           <% @near_search_results.each do |result| %>
-            <div>
+            <div class="near_search_result">
             <%= link_to result['brewery']['name'], brewery_path("#{result['brewery']['id']}_#{result['id']}"), :style => "color:black" %> <br />
             <%= result['name'] %> <br />
             <%= result['streetAddress'] %> <br /> <%= result['locality'] %>, <%= result['region'] %>, <%= result['postalCode'] %>

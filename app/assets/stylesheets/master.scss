@@ -479,6 +479,11 @@ hr.review-split {
   font-family: inherit;
 }
 
+  .brewery_search_results {
+  background-color: white;
+  overflow: auto;
+}
+
 @media only screen and (max-width: 799px) {
   /* For tablets: */
   .col-s-1 {width: 8.33%;}
@@ -672,6 +677,8 @@ hr.review-split {
     margin-top: 10px;
     margin-bottom: 13px;
   }
+
+
 
 }
 
