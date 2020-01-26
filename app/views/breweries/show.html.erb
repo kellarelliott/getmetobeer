@@ -4,7 +4,7 @@
      <%= image_tag "#{@organization['data']['images']['squareLarge']}", :class => "brew_logo" %>
       <% @breweries['data'].each do |brewery| %>
         <% if params[:id].split('_').last.delete(' ') == brewery['id'].delete(' ') %>
-          <h1><%= brewery['name'] %></h1>
+          <h1 id='brewery_location'><%= brewery['name'] %></h1>
           <p class="city"><%= brewery['locality'] %>, <%= brewery['region'] %></p>
           <% break %>
         <% end %>
@@ -136,10 +136,33 @@
   </div>
   <div class="reviews-column col-5 col-s-12">
     <div class="reviews-div">
-      <h2>Reviews</h2>
-      <input id='comment-message' placeholder="Message">
-      <input id='comment-rating' placeholder="Rating">
-      <button id='submit-comment'>submit</button>
+      <div class="reviews-header">
+        <div style="font-size:24px">Reviews</div>
+        <button id="new-board">Add a Review</button>
+      </div>
+      <!-- Create Board Modal -->
+
+      <div class="modal micromodal-slide" id="create-board" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="create-board-title">
+            <header class="modal__header">
+              <h2 class="modal__title" id="create-board-title">
+                Add a review
+              </h2>
+              <button class="modal__close" aria-label="Close modal" data-micromodal-close>X</button>
+            </header>
+            <form type="POST">
+              <main class="modal__content" id="create-board-content">
+                <input id='comment-message' placeholder="Message">
+                <input id='comment-rating' placeholder="Rating">
+              </main>
+              <footer class="modal__footer">
+                <button id="save-board" class="website_button">Submit</button>
+              </footer>
+            </form>
+          </div>
+        </div>
+      </div>
       <hr />
       <div class="review">
       </div>

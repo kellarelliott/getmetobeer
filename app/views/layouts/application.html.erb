@@ -14,23 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <script>
-    $(function () {
-      $('#search').val('');
-      $('#hidden_search').val('');
-
-      var hidden = 'yes'
-      $('.magnify_glass').click(function () {
-        if (hidden === 'yes') {
-          $('.hidden_search_div').css("display", "block");
-          hidden = 'no'
-        } else {
-          $('.hidden_search_div').css("display", "none");
-          hidden = 'yes'
-        }
-      });
-    });
-    </script>
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <div class="pagecol col-11 col-s-12">
       <nav class="nav col-12">
         <p><%= link_to image_tag("beerlogo.png") + 'GetMetoBeer.com', root_path %></p>
