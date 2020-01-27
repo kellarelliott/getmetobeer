@@ -61,11 +61,12 @@
        <% @breweries['data'].each do |brewery| %>
         <% if params[:id].split('_').last.delete(' ') == brewery['id'].delete(' ') %>
           <% if current_user.present? %>
-            <script>var user_email = '<%= current_user.email%>';  </script>
+            <script>var userEmail = '<%= current_user.email%>'; var userId = '<%=current_user.id%>';  </script>
           <% else %>
-            <script>var user_email = 'Not logged in';  </script>
+            <script>var userEmail = 'Not logged in';  </script>
           <% end %>
         <script>
+
 
           function initMap() {
             var myLatLng = {lat: <%= brewery['latitude'] %>, lng: <%= brewery['longitude'] %>};

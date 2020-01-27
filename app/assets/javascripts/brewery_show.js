@@ -33,7 +33,7 @@ $(function () {
         var message = review['message'];
         var stringRating = review['rating'].toString();
         var email = review['email']
-        htmlString += '<div>' + message + '-' + '<span class="user_email">' + email + '</span></div><span>' + stringRating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
+        htmlString += '<div>' + message + '-' + '<span class="user_email"><a href="/users/' + userId + '" style="color:black"> ' + email + '</a></span ></div > <span>' + stringRating + '<i class="fa fa-star" aria-hidden="true"></i></span> <hr class="review-split" />';
         var rating = review['rating']
         ratingTotal += rating;
         count++
@@ -49,7 +49,7 @@ $(function () {
   $('#new-board').on('click', MicroModal.show.bind(null, 'create-board'));
   $('#save-board').click(function () {
     event.preventDefault();
-    if (user_email === 'Not logged in') {
+    if (userEmail === 'Not logged in') {
       alert('You must be logged in to submit a review');
     };
     var message = $('#comment-message').val();
@@ -65,7 +65,7 @@ $(function () {
           location: location
         }
       }).success(function () {
-        htmlString = '<div>' + message + '-' + '<span class= "user_email">' + user_email + '</span></div><span>' + rating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
+        htmlString = '<div>' + message + '-' + '<span class= "user_email"><a href="/users/' + userId + '" style="color:black">' + userEmail + '</a></span></div><span>' + rating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
         var divReview = $('.review');
         count++;
         var postRatingTotal = ratingTotal + parseInt(rating, 10);
