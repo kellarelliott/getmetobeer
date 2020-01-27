@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The getmetobeer website is designed to help people find a brewery near them, and read reviews about different breweries.
 
-Things you may want to cover:
+*In order to fully experience this site you should make an account.
 
-* Ruby version
+*This app uses the Google Maps API and brewery_DB API. The brewery_DB API is using a sandbox environment, so not all cities will have breweries.
 
-* System dependencies
+*If you are searching for a brewery near you, a good example is Denver. You can also try Chicago. If you search in a city that does not have a brewery in it, a message will appear letting you know.
 
-* Configuration
+*If you are searching for a specific brewery, you can try such breweries as Lagunitas, Oskar Blues, or Breckenridge brewery. There are plenty more.
 
-* Database creation
+*This app uses the HTTParty gem to get information from the brewery_DB API. This can be seen in the breweries controller.
 
-* Database initialization
+*Reviews for a brewery will automatically update without needing to refresh the page as will the average rating.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
