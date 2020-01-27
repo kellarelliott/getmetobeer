@@ -53,7 +53,7 @@ $(function () {
     var message = $('#comment-message').val();
     var rating = $('#comment-rating').val();
     var location = $('#brewery_location').text();
-    if (message != '' && 0 <= parseInt(rating, 10) <= 5) {
+    if (message != '' && (parseInt(rating, 10) >= 1 && parseInt(rating, 10) <= 5)) {
 
       $.post("/comments", {
         comment: {

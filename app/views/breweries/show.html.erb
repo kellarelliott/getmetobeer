@@ -29,7 +29,11 @@
           <% @beers['data'].each do |beer| %>
             <tr class= 'brewery_beer_table_tr'>
               <td><%= beer['nameDisplay'] %></td>
-              <td><%= beer['style']['shortName'] %></td>
+              <% if beer['style'].present?%>
+                <td><%= beer['style']['shortName'] %></td>
+              <% else %>
+                <td>No Description Available</td>
+              <% end %>
               <td><%= beer['abv'] %>%</td>
               <% @beer_ids['data'].each do |beer_id|%>
                 <% if beer_id['id'] == beer['id']%>
