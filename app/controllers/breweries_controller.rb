@@ -8,15 +8,15 @@ class BreweriesController < ApplicationController
       locations = response["data"]
       @near_search_results = locations.find_all { |location| location['locality'].downcase == "#{@near_search_parameters}"}
 
-      @location_coordinates = []
-      @near_search_results.each do |location|
-        @location_coordinates.append([location['latitude'], location['longitude']])
+      if @near_search_results.any?
+        @location_coordinates = []
+        @near_search_results.each do |location|
+          @location_coordinates.append([location['latitude'], location['longitude']])
+        end
+      else
+        @words = 'Could not find a brewery in that town.'
       end
     end
-
-
-
-
   end
 
   def show

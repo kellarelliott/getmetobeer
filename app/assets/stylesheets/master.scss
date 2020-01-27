@@ -470,8 +470,7 @@ hr.review-split {
 
 #new-board {
   font-size: 13px;
-  margin-left: 7px;
-  margin-top: 5px;
+  margin: auto;
   height: 20px;
   background-color: black;
   color: white;
@@ -479,9 +478,19 @@ hr.review-split {
   font-family: inherit;
 }
 
-  .brewery_search_results {
+.brewery_search_results {
   background-color: white;
   overflow: auto;
+}
+
+.brewery_search_input_header {
+  color: white;
+  margin-bottom: 5px;
+  padding-top: 5px;
+}
+
+.avg-rating {
+  padding-top: 6px;
 }
 
 @media only screen and (max-width: 799px) {

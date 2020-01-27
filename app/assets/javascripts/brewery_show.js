@@ -25,16 +25,24 @@ $(function () {
 
   $.get("/comments").success(function (data) {
     var htmlString = "";
+    ratingTotal = 0;
+    count = 0
 
     $.each(data, function (index, review) {
       if (breweryDbId === review['brewery_db_id']) {
         var message = review['message'];
-        var rating = review['rating'].toString();
-        htmlString += '<div>' + message + '</div><span>' + rating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
+        var stringRating = review['rating'].toString();
+        htmlString += '<div>' + message + '</div><span>' + stringRating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
+        var rating = review['rating']
+        ratingTotal += rating;
+        count++
+        ratingAvg = (ratingTotal / count).toFixed(2);
       }
     });
     var divReview = $('.review');
     divReview.html(htmlString);
+    var divAvg = $('.avg-rating');
+    divAvg.html(ratingAvg + '<i class="fa fa-star" aria-hidden="true">');
 
   });
   $('#new-board').on('click', MicroModal.show.bind(null, 'create-board'));
@@ -44,24 +52,31 @@ $(function () {
     var message = $('#comment-message').val();
     var rating = $('#comment-rating').val();
     var location = $('#brewery_location').text();
-    console.log(location)
+    if (message != '' && 0 <= parseInt(rating, 10) <= 5) {
 
-
-    $.post("/comments", {
-      comment: {
-        message: message,
-        rating: rating,
-        brewery_db_id: breweryDbId,
-        location: location
-      }
-    }).success(function () {
-      htmlString = '<div>' + message + '</div><span>' + rating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
-      var divReview = $('.review');
-      divReview.prepend(htmlString);
-      $('#comment-message').val('');
-      $('#comment-rating').val('');
-      MicroModal.close('create-board');
-    });
+      $.post("/comments", {
+        comment: {
+          message: message,
+          rating: rating,
+          brewery_db_id: breweryDbId,
+          location: location
+        }
+      }).success(function () {
+        htmlString = '<div>' + message + '</div><span>' + rating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
+        var divReview = $('.review');
+        count++;
+        var postRatingTotal = ratingTotal + parseInt(rating, 10);
+        var newAvg = postRatingTotal / count;
+        var divAvg = $('.avg-rating');
+        divReview.prepend(htmlString);
+        divAvg.html(newAvg + '<i class="fa fa-star" aria-hidden="true">')
+        $('#comment-message').val('');
+        $('#comment-rating').val('');
+        MicroModal.close('create-board');
+      });
+    } else {
+      alert('Invalid input. Make sure you have written a message and your rating is a number from 1 to 5');
+    }
   });
 
 })

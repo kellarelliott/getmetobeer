@@ -34,6 +34,7 @@
     </script>
     <% else %>
     <script>
+
       function initMap() {
           var myLatLng = {lat: 39.7430747, lng: -105.0201698 };
 
@@ -47,6 +48,7 @@
               map: map,
               itle: 'Hello World!'
               });
+          $('#near_search').val('');
         };
 
         window.google = {};
@@ -55,12 +57,13 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2EurYLoXt3BYUbbLyGqcCVdhQPwjWwYg&callback=initMap"></script>
     <div class="map-search-list">
       <div class="brewery-map-search-container">
+        <div class="brewery_search_input_header">Find a Brewery Near You!</div>
         <%= form_tag(root_path, :method => "get", class: 'index_search col-12') do %>
           <%= search_field_tag :near_search, params[:near_search], placeholder: "Enter a city." %>
         <% end %>
       </div>
       <div class="brewery_search_results">
-        <% if @near_search_results%>
+        <% if @near_search_results.present?%>
           <% @near_search_results.each do |result| %>
             <div class="near_search_result">
             <%= link_to result['brewery']['name'], brewery_path("#{result['brewery']['id']}_#{result['id']}"), :style => "color:black" %> <br />
@@ -69,6 +72,10 @@
             <hr />
             </div>
           <% end %>
+        <% else %>
+        <div>
+          <%= @words %>
+        </div>
         <% end %>
       </div>
     </div>

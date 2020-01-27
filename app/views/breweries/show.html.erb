@@ -137,8 +137,10 @@
   <div class="reviews-column col-5 col-s-12">
     <div class="reviews-div">
       <div class="reviews-header">
-        <div style="font-size:24px">Reviews</div>
-        <button id="new-board">Add a Review</button>
+        <div style="font-size:24px" class="col-3">Reviews-</div>
+        <div class="avg-rating col-2"></div>
+        <button id="new-board" class="col-3">Add a Review</button>
+
       </div>
       <!-- Create Board Modal -->
 
@@ -154,7 +156,7 @@
             <form type="POST">
               <main class="modal__content" id="create-board-content">
                 <input id='comment-message' placeholder="Message">
-                <input id='comment-rating' placeholder="Rating">
+                <input id='comment-rating' placeholder="Rating (1 to 5)">
               </main>
               <footer class="modal__footer">
                 <button id="save-board" class="website_button">Submit</button>
