@@ -66,7 +66,7 @@ $(function () {
         var divReview = $('.review');
         count++;
         var postRatingTotal = ratingTotal + parseInt(rating, 10);
-        var newAvg = postRatingTotal / count;
+        var newAvg = (postRatingTotal / count).toFixed(2);
         var divAvg = $('.avg-rating');
         divReview.prepend(htmlString);
         divAvg.html(newAvg + '<i class="fa fa-star" aria-hidden="true">')
