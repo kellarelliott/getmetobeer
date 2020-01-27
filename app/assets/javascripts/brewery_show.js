@@ -32,7 +32,8 @@ $(function () {
       if (breweryDbId === review['brewery_db_id']) {
         var message = review['message'];
         var stringRating = review['rating'].toString();
-        htmlString += '<div>' + message + '</div><span>' + stringRating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
+        var email = review['email']
+        htmlString += '<div>' + message + '-' + '<span class="user_email">' + email + '</span></div><span>' + stringRating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
         var rating = review['rating']
         ratingTotal += rating;
         count++
@@ -62,7 +63,7 @@ $(function () {
           location: location
         }
       }).success(function () {
-        htmlString = '<div>' + message + '</div><span>' + rating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
+        htmlString = '<div>' + message + '-' + '<span class= "user_email">' + user_email + '</span></div><span>' + rating + '<i class="fa fa-star" aria-hidden="true"></i></span><hr class="review-split"/>';
         var divReview = $('.review');
         count++;
         var postRatingTotal = ratingTotal + parseInt(rating, 10);
@@ -78,5 +79,4 @@ $(function () {
       alert('Invalid input. Make sure you have written a message and your rating is a number from 1 to 5');
     }
   });
-
 })

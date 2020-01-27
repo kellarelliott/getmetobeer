@@ -6,12 +6,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-      comment = Comment.create(comment_params.merge(user: current_user))
+      comment = Comment.create(comment_params.merge(user: current_user, email: current_user.email))
       render json: comment
   end
 
   private
     def comment_params
-      params.require(:comment).permit(:message, :rating, :brewery_db_id, :location)
+      params.require(:comment).permit(:message, :rating, :brewery_db_id, :location,)
     end
 end
