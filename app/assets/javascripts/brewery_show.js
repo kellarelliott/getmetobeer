@@ -49,7 +49,9 @@ $(function () {
   $('#new-board').on('click', MicroModal.show.bind(null, 'create-board'));
   $('#save-board').click(function () {
     event.preventDefault();
-
+    if (user_email === 'Not logged in') {
+      alert('You must be logged in to submit a review');
+    }
     var message = $('#comment-message').val();
     var rating = $('#comment-rating').val();
     var location = $('#brewery_location').text();

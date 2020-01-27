@@ -60,8 +60,13 @@
       <h2>Brewery Information</h2>
        <% @breweries['data'].each do |brewery| %>
         <% if params[:id].split('_').last.delete(' ') == brewery['id'].delete(' ') %>
-      <script>
-          var user_email = '<%= current_user.email%>'
+          <% if current_user.present? %>
+            <script>var user_email = <%= current_user.email%>;  </script>
+          <% else %>
+            <script>var user_email = 'Not logged in';  </script>
+          <% end %>
+        <script>
+
           function initMap() {
             var myLatLng = {lat: <%= brewery['latitude'] %>, lng: <%= brewery['longitude'] %>};
 
@@ -113,23 +118,23 @@
             <tr>
               <td>TUES:</td>
               <td>12:00pm - 11:00pm</td>
-            </tr>
+            <tr>
               <td>WED:</td>
               <td>12:00pm - 11:00pm</td>
             </tr>
-            </tr>
+            <tr>
               <td>THU:</td>
               <td>12:00pm - 11:00pm</td>
             </tr>
-            </tr>
+            <tr>
               <td>FRI:</td>
               <td>12:00pm - 11:00pm</td>
             </tr>
-            </tr>
+            <tr>
               <td>SAT:</td>
               <td>12:00pm - 11:00pm</td>
             </tr>
-            </tr>
+            <tr>
               <td>SUN:</td>
               <td>12:00pm - 11:00pm</td>
             </tr>
