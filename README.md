@@ -1,4 +1,5 @@
-# README
+# GetMetoBeer
+https://getmetobeer.herokuapp.com/
 
 The getmetobeer website is designed to help people find a brewery near them, and read reviews about different breweries.
 
@@ -14,4 +15,4 @@ The getmetobeer website is designed to help people find a brewery near them, and
 
 *Reviews for a brewery will automatically update without needing to refresh the page as will the average rating.
 
-
+![Image description](/getmetobeer.gif)
